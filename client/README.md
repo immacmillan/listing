@@ -76,3 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 npm install express nodemailer body-parser cors
 npm install axios
 npm install axios react-router-dom
+npm install react-responsive-carousel
+
+
