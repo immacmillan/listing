@@ -361,9 +361,7 @@ footer a {
   padding: 20px;
 
   background: linear-gradient(
-    135deg,
-    #248922,
-    #d38c1b
+    180deg, #113524, #b96704
   ); /* Gradient background */
 
   margin: 20px 0;
@@ -442,4 +440,44 @@ footer a {
   color: #ff6b6b;
 
   font-size: 14px;
+}
+
+/* Mini Carousel for the other listings */
+
+.carousel-container2 {
+  display: flex;
+
+  align-items: center;
+}
+
+.carousel2 {
+  width: 60%;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+.carousel2-item {
+  display: inline-block;
+
+  width: 100%;
+
+  /* Add more styling as needed */
+}
+
+.description2 {
+  width: 40%;
+
+  padding-left: 20px;
+
+  /* Add more styling as needed */
+}
+
+.paralisting {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.paralistingdeets {
+  font-style: italic;
 }

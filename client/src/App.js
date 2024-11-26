@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import "./style-guide.css";
-
 import "./App.css";
 
 function App() {
@@ -76,38 +73,62 @@ function App() {
 
   const otherListings = [
     {
-      id: 11,
-      title:
-        "4500 Sqft, 6 Bedroom, 3 Bathrooms",
-      image: `${process.env.PUBLIC_URL}/assets/pic11.jpg`,
+      id: 1,
+      title: "Exterior Shot, front of House",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting1.jpg`,
     },
-    { id: 12, title: "Charming Cottage", image: `${process.env.PUBLIC_URL}/assets/pic11.jpg`, },
-
-    { id: 13, title: "Urban Loft", link: "#urban-loft" },
+    {
+      id: 2,
+      title: "Exterior Shot, backyard - pond & golf course",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting2.jpg`,
+    },
+    {
+      id: 3,
+      title: "1 of 4 Guest BedroomsPr",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting3.jpg`,
+    },
+    {
+      id: 4,
+      title: "Primary Bedroom Ensuite Bath",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting4.jpg`,
+    },
   ];
+
+  const otherListings2 = [
+    {
+      id: 1,
+      title: "Primary Suite, built in surround sound and multimedia",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting5.jpg`,
+    },
+    {
+      id: 2,
+      title: "Primary Suite, built in surround sound and multimedia - alt view",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting6.jpg`,
+    },
+    {
+      id: 3,
+      title: "Ensuite Bath view 1",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting7.jpg`,
+    },
+    {
+      id: 4,
+      title: "Ensuite Bath view 2",
+      image: `${process.env.PUBLIC_URL}/assets/otherlisting8.jpg`,
+    },
+  ];
+
   const amenities = [
     { icon: "fa-hot-tub", label: "Jacuzzi Tub" },
-
     { icon: "fa-shower", label: "Rainfall Shower" },
-
     { icon: "fa-tv", label: "Multimedia Center" },
-
     { icon: "fa-table-tennis", label: "Ping Pong" },
-
     { icon: "fa-fire", label: "2 Gas Fireplaces" },
-
     { icon: "fa-umbrella-beach", label: "Balcony" },
-
     { icon: "fa-gamepad", label: "Gaming Friendly" },
-
     { icon: "fa-laptop", label: "Standing Desks" },
-
     { icon: "fa-bed", label: "Tempurpedic Mattresses" },
-
     { icon: "fa-burger", label: "BBQ Smoker & Grill" },
-
     { icon: "fa-water", label: "Lake View" },
-
     { icon: "fa-mountain", label: "Mountain View" },
     { icon: "fa-futbol", label: "Foosball Table" },
     { icon: "fa-hockey-puck", label: "Air Hockey Table" },
@@ -116,13 +137,9 @@ function App() {
 
   const [formData, setFormData] = useState({
     name: "",
-
     email: "",
-
     phone: "",
-
     reason: "",
-
     message: "",
   });
 
@@ -183,7 +200,7 @@ function App() {
 
           <a href="#listings">Listings</a>
 
-          <a href="#contact">Contact Us</a>
+          <a href="#contact-us">Contact Us</a>
         </nav>
       </header>
 
@@ -254,7 +271,7 @@ function App() {
       <div className="property-details">
         <h2>5236 Malta Street, Denver CO, 80249</h2>
 
-        <div className="price">Inquire for Pricing - Daily/Weekly/Monthly</div>
+        <div className="price">Inquire for Pricing - Daily/Weekly/Monthly or Events</div>
 
         <div className="features">
           <div>7 Bedrooms</div>
@@ -303,13 +320,80 @@ function App() {
         </div>
       </div>
 
-      <div className="other-listings">
-        <h3>Other Listings</h3>
+        <div id="listings" className="other-listings">
+        <h3>Other Listings & Configurations for 5236 Malta</h3>
+        <br></br>
+        <div className="carousel-container2">
+          <Carousel
+            className="carousel2"
+            autoPlay
+            interval={3000}
+            infiniteLoop
+            stopOnHover
+            emulateTouch
+            swipeable
+            showThumbs={false}
+            showStatus={false}
+            showIndicators={true}
+            dynamicHeight={false}
+            transitionTime={800}
+            axis="horizontal"
+          >
+            {otherListings.map((otherListings) => (
+              <div key={otherListings.id}>
+                <img src={otherListings.image} alt={otherListings.title} />
+                {/* <p className="legend">{otherListings.title}</p> */ }
+              </div>
+            ))}
+          </Carousel>
+          <div class="description2">
+            <p><strong>Need Less Space?</strong></p>
+            <p className="paralisting">5 Bedroom, 3 Full Bath, 4500 sqft Configuration Available</p>
+            <p className="paralistingdeets">
+              Budget friendly option, still flush with luxury amenities
+              and offering sophisticated living. Full private home, 3 floors of
+              living space, and private 2 car garage.
+            </p>
+          </div>
+        </div>
+        <div className="carousel-container2">
+          <Carousel
+            className="carousel2"
+            autoPlay
+            interval={3000}
+            infiniteLoop
+            stopOnHover
+            emulateTouch
+            swipeable
+            showThumbs={false}
+            showStatus={false}
+            showIndicators={true}
+            dynamicHeight={false}
+            transitionTime={800}
+            axis="horizontal"
+          >
+            {otherListings2.map((otherListings2) => (
+              <div key={otherListings2.id}>
+                <img src={otherListings2.image} alt={otherListings2.title} />
+                {/* <p className="legend">{otherListings2.title}</p>*/}
+              </div>
+            ))}
+          </Carousel>
+          <div class="description2">
+            <p><strong>Looking 1-3 People?</strong></p>
+            <p className="paralisting">1 Bedroom, 1 Bathroom, 1500+ sqft Configuration Available</p>
+            <p className="paralistingdeets">
+              Private space and plenty of extras, including spa-like ensuite bath,
+              UV Cedar Sauna, Game Room, Surround Sound multimedia setup, record
+              player, living room, private kitchen and more.
+            </p>
+          </div>
+        </div>
 
-        {otherListings.map((listing) => (
+       {/*  {otherListings.map((listing) => (
           <div className="listing" key={listing.id}>
             <img
-              src={`${process.env.PUBLIC_URL}/assets/${listing.id}.jpg`}
+              src={`${process.env.PUBLIC_URL}/assets/otherlisting${listing.id}.jpg`}
               alt={listing.title}
             />
 
@@ -319,11 +403,11 @@ function App() {
               </a>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
 
       <footer>
-        <div className="contact-us">
+        <div id="contact-us" className="contact-us">
           <h3>Contact Us</h3>
 
           <form onSubmit={handleSubmit}>
