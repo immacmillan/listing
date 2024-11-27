@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./style-guide.css";
-import "./App.css";
+import "../style-guide.css";
+import "../App.css";
 
-function App() {
+function Home() {
   const listings = [
     {
       id: 1,
@@ -188,14 +188,6 @@ function App() {
       sendEmail(subject, text);
     }
   };
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.tiktok.com/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <div className="App">
       {/* <header>
@@ -240,18 +232,23 @@ function App() {
         </Carousel>
 
         <div className="action-buttons">
-          <a href="/inquire.html" className="action-button">
-            Inquire Now
-          </a>
-          <a href="/booking.html" className="action-button">
-            New Booking
-          </a>
-          {/* <button
+          <button
             className="action-button"
             onClick={() => (window.location.href = "/inquire")}
           >
             Inquire Now
-          </button> */}
+          </button>
+          <button
+            className="action-button"
+            onClick={() =>
+              sendEmail(
+                "Booking Request",
+                "I would like to book this property."
+              )
+            }
+          >
+            New Booking / Event
+          </button>
 
           {/*  <a href="#inquire" className="action-button">
             Inquire Now
@@ -317,37 +314,6 @@ function App() {
         </div>
       </div>
 
-        <div className="tiktok-video">
-        <h2>TikTok Video Walkthrough of 5236 Malta</h2>
-          <blockquote
-            className="tiktok-embed"
-            cite="https://www.tiktok.com/@zane.rentals/video/7440891140318006571"
-            data-video-id="7440891140318006571"
-            style={{ maxWidth: "605px", minWidth: "325px" }}
-          >
-            <section>
-              <a
-                target="_blank"
-                title="@zane.rentals"
-                href="https://www.tiktok.com/@zane.rentals?refer=embed"
-              >
-                @zane.rentals
-              </a>
-
-              <p>Walking through 5236 Malta Street</p>
-
-              <a
-                target="_blank"
-                title="♬ original sound - Zane.Rentals"
-                href="https://www.tiktok.com/music/original-sound-7440891152243837742?refer=embed"
-              >
-                ♬ original sound - Zane.rentals
-              </a>
-            </section>
-          </blockquote>
-        </div>
-
-        {/* style={{ maxWidth: '605px', minWidth: '325px' }}> */}
       <div id="listings" className="other-listings">
         <h3>Other Listings & Configurations for 5236 Malta</h3>
         <br></br>
@@ -526,4 +492,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

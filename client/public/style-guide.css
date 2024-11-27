@@ -94,7 +94,7 @@ header nav a {
   box-sizing: border-box; /*ensure padding is inc. within width*/
   overflow: hidden; /*prevent overflowing*/
 
-  background-image: url("/public/assets/aerial\ view.jpg");
+  background-image: url("/assets/aerial\ view.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -122,13 +122,13 @@ header nav a {
   position: relative;
   z-index: 1;
   width: 75%; /* Take 75% of the horizontal frame space */
-  padding-top: 8px;
+  padding-top: 20px;
 }
 
 .hero-nav {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 5px; 
   display: flex;
   gap: 10px;
 }
@@ -144,7 +144,7 @@ header nav a {
 }
 
 .hero-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, .3);
 }
 
 /* Responsive Styles */
@@ -415,9 +415,7 @@ footer a {
   padding: 20px;
 
   background: linear-gradient(
-    180deg,
-    #113524,
-    #b96704
+    180deg, #113524, #b96704
   ); /* Gradient background */
 
   margin: 20px 0;
@@ -536,25 +534,4 @@ footer a {
 }
 .paralistingdeets {
   font-style: italic;
-}
-
-/* TikTok Video Styles */
-
-.tiktok-video {
-  margin: 30px auto;
-
-  max-width: 605px;
-
-  min-width: 325px;
-
-  border-radius: 10px; /* Rounded corners */
-  background: #113524 !important;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-
-  overflow: hidden; /* Ensure content fits within the div */
-}
-
-.css-g03djc {
-  background: #113524 !important;
 }
