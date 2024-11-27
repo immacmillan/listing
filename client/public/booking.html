@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>New Booking</title>
+
+    <link rel="stylesheet" href="style-guide.css">
+
+    <link rel="stylesheet" href="App.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
+
+</head>
+
+<body>
+
+    <div class="App">
+
+        <div class="hero">
+
+            <nav class="hero-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="listings.html">Listings</a>
+
+                <a href="index.html#contact-us">Contact Us</a>
+
+            </nav>
+
+            <div class="hero-content">
+
+                <h1>Retreat into Refined Denver Living</h1>
+
+                <p>Comfort and Access - Ski, Hike, Explore, or Relax and Unwind</p>
+
+            </div>
+
+        </div>
+
+        <div class="contact-us">
+
+            <h3>New Booking Request - Rental or Event</h3>
+
+            <form id="booking-form">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="email" name="email" placeholder="Email" required>
+
+                <input type="tel" name="phone" placeholder="Phone Number">
+
+                <select name="booking-type" required>
+
+                    <option value="">Booking Type</option>
+
+                    <option value="Daily Rental">Daily Rental</option>
+
+                    <option value="Weekly Rental">Weekly Rental</option>
+
+                    <option value="Monthly Rental">Monthly Rental</option>
+
+                    <option value="Event">Event</option>
+
+                </select>
+
+                <input type="text" id="booking-dates" name="dates" placeholder="Select Dates" required>
+
+                <textarea name="message" placeholder="Your message" maxlength="2500" required></textarea>
+
+                <button type="submit" class="action-button">Send Booking Request</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+
+    <script src="booking.js"></script>
+
+</body>
+
+</html>
