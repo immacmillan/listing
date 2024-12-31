@@ -357,7 +357,7 @@ footer a {
 /* Amenities Section Styles */
 
 .amenities {
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
 
   background-color: #123524; /* Dark forest green */
 
@@ -555,6 +555,73 @@ footer a {
   overflow: hidden; /* Ensure content fits within the div */
 }
 
+.tiktok-video iframe {
+  background: #113524 !important;
+}
+
 .css-g03djc {
   background: #113524 !important;
+}
+/* Close by Attractions Section Styles */
+
+.close-by-attractions {
+  padding: 10px 20px 20px 20px;
+
+  background-color: #123524; /* Dark forest green */
+
+  margin: 20px 0;
+
+  border-radius: 8px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-by-attractions h3 {
+  font-family: "Pacifico", cursive;
+
+  font-size: 24px;
+
+  color: #ffffff;
+
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.attractions-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.attraction {
+  flex: 1 1 30%; /* Adjust the width of each attraction item */
+
+  display: flex;
+
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.attraction i {
+  margin-right: 10px;
+
+  font-size: 24px;
+
+  color: #80cbc4; /* Winter accent color */
+}
+/* Map View Styles */
+
+.map-view {
+  margin: 20px auto;
+
+  max-width: 100%;
+
+  border-radius: 10px; /* Rounded corners */
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  overflow: hidden; /* Ensure content fits within the div */
 }
