@@ -190,8 +190,8 @@ function App() {
   };
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.tiktok.com/embed.js';
+    const script = document.createElement("script");
+    script.src = "https://www.tiktok.com/embed.js";
     script.async = true;
     document.body.appendChild(script);
   }, []);
@@ -246,20 +246,6 @@ function App() {
           <a href="/booking.html" className="action-button">
             New Booking
           </a>
-          {/* <button
-            className="action-button"
-            onClick={() => (window.location.href = "/inquire")}
-          >
-            Inquire Now
-          </button> */}
-
-          {/*  <a href="#inquire" className="action-button">
-            Inquire Now
-          </a>
-
-          <a href="#booking" className="action-button">
-            Request Booking
-          </a> */}
         </div>
       </div>
 
@@ -316,38 +302,131 @@ function App() {
           ))}
         </div>
       </div>
+      <div className="close-by-attractions">
+        <h3>Close by Attractions</h3>
 
-        <div className="tiktok-video">
-        <h2>TikTok Video Walkthrough of 5236 Malta</h2>
-          <blockquote
-            className="tiktok-embed"
-            cite="https://www.tiktok.com/@zane.rentals/video/7440891140318006571"
-            data-video-id="7440891140318006571"
-            style={{ maxWidth: "605px", minWidth: "325px" }}
-          >
-            <section>
-              <a
-                target="_blank"
-                title="@zane.rentals"
-                href="https://www.tiktok.com/@zane.rentals?refer=embed"
-              >
-                @zane.rentals
-              </a>
+        <div className="attractions-list">
+          <div className="attraction">
+            <i className="fas fa-plane"></i>
 
-              <p>Walking through 5236 Malta Street</p>
+            <span>Denver International Airport ~ 15 minutes drive</span>
+          </div>
 
-              <a
-                target="_blank"
-                title="♬ original sound - Zane.Rentals"
-                href="https://www.tiktok.com/music/original-sound-7440891152243837742?refer=embed"
-              >
-                ♬ original sound - Zane.rentals
-              </a>
-            </section>
-          </blockquote>
+          <div className="attraction">
+            <i className="fas fa-building"></i>
+
+            <span>Gaylord Convention Center ~ 8 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-city"></i>
+
+            <span>Downtown Denver ~ 25 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-tree"></i>
+
+            <span>
+              Rocky Mountain Arsenal National Wildlife Refuge ~ 10 min drive
+            </span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-golf-ball"></i>
+
+            <span>Green Valley Ranch Golf Course &lt; 1 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-skiing"></i>
+
+            <span>Loveland Ski Resort ~ 80 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-skiing-nordic"></i>
+
+            <span>A-Basin/Keystone Ski Resort ~ 95 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-skiing"></i>
+
+            <span>Breckenridge Ski Resort ~ 110 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-skiing"></i>
+
+            <span>Vail Ski Resort ~ 120 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-shopping-cart"></i>
+
+            <span>Costco ~ 15 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-apple-alt"></i>
+
+            <span>Sprouts Grocery ~ 5 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-coffee"></i>
+
+            <span>Dazbog Coffee ~ 5 min drive</span>
+          </div>
+
+          <div className="attraction">
+            <i className="fas fa-store"></i>
+
+            <span>Stanley Marketplace ~ 15 min drive</span>
+          </div>
         </div>
+      </div>
+      <div className="tiktok-video">
+        <h2>TikTok Video Walkthrough of 5236 Malta</h2>
+        <blockquote
+          className="tiktok-embed"
+          cite="https://www.tiktok.com/@zane.rentals/video/7440891140318006571"
+          data-video-id="7440891140318006571"
+          style={{ maxWidth: "605px", minWidth: "325px" }}
+        >
+          <section>
+            <a
+              target="_blank"
+              title="@zane.rentals"
+              href="https://www.tiktok.com/@zane.rentals?refer=embed"
+            >
+              @zane.rentals
+            </a>
 
-        {/* style={{ maxWidth: '605px', minWidth: '325px' }}> */}
+            <p>Walking through 5236 Malta Street</p>
+
+            <a
+              target="_blank"
+              title="♬ original sound - Zane.Rentals"
+              href="https://www.tiktok.com/music/original-sound-7440891152243837742?refer=embed"
+            >
+              ♬ original sound - Zane.rentals
+            </a>
+          </section>
+        </blockquote>
+      </div>
+     {/*  <div className="map-view">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.839123456789!2d-104.737654321!3d39.8392356789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d123456789%3A0x123456789abcdef!2s5236%20Malta%20Street%2C%20Denver%2C%20CO%2080249!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
+      </div> */}
+      {/* style={{ maxWidth: '605px', minWidth: '325px' }}> */}
       <div id="listings" className="other-listings">
         <h3>Other Listings & Configurations for 5236 Malta</h3>
         <br></br>

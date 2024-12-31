@@ -80,9 +80,8 @@ npm install react-responsive-carousel
 
 Notes for improvement: 
 
-- local grocery or other day-to-day living: costco, grocery, coffee etc...
-- link a local news letter... monthly/weekly events..
-- embed tiktok video
-- link to google maps
-- share button
-- 
+- local grocery or other day-to-day living: costco, grocery, coffee etc...  DONE
+- link a local news letter... monthly/weekly events..   TBC
+- embed tiktok video... DONE
+- link to google maps... change to a link - find my on the map... 
+- share button... arrow button on header? share link - show on map next to address header...
