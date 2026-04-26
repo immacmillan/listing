@@ -1,13 +1,71 @@
+@import "tailwindcss";
+
+/* Design tokens — forest green palette on a light base */
+@theme {
+  --color-forest-900: #0a1f12;
+  --color-forest-800: #123524;
+  --color-forest-700: #1a4a32;
+  --color-forest-600: #1e5c3a;
+  --color-forest-500: #2d7a4f;
+  --color-forest-400: #3d9e68;
+  --color-forest-300: #6abf8a;
+  --color-forest-200: #a8dbbe;
+  --color-forest-100: #d4f0e0;
+  --color-forest-50:  #f0faf4;
+
+  --color-teal-accent: #80cbc4;
+  --color-teal-dark:   #004d40;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Pacifico", cursive;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* react-day-picker v9 overrides — forest green theme */
+.rdp-root {
+  --rdp-accent-color: #123524;
+  --rdp-accent-background-color: #d4f0e0;
+  --rdp-selected-border: 2px solid #123524;
+  --rdp-disabled-opacity: 1;
+}
+
+/* Disabled days — greyed out with strikethrough */
+.rdp-root .rdp-disabled:not(.rdp-selected) {
+  opacity: 1 !important;
+}
+
+.rdp-root .rdp-disabled:not(.rdp-selected) .rdp-day_button {
+  color: #9ca3af !important;
+  text-decoration-line: line-through !important;
+  text-decoration-color: #9ca3af !important;
+  text-decoration-thickness: 1px !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* Hover on available days */
+.rdp-root .rdp-day:not(.rdp-disabled):not(.rdp-selected) .rdp-day_button:hover {
+  background-color: #d4f0e0 !important;
+}
+
+/* Selected range middle */
+.rdp-root .rdp-range_middle {
+  background-color: #d4f0e0;
 }
