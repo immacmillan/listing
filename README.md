@@ -1,67 +1,117 @@
 # Luxe Listings — Denver Dream House
 
+
 Vacation rental listing site for 5236 Malta Street, Denver CO 80249.
+
 
 ---
 
+
 ## Quick Start
 
+
 ### Run both frontend and backend together
+
 
 ```bash
 npm run dev
 ```
+
 
 This starts:
 - **Frontend** (Vite + React) on `http://localhost:3000`
 - **Backend** (Express API) on `http://localhost:3001`
 
+
 ### Run individually
+
 
 ```bash
 # Frontend only
 cd client && npm run dev
 
+
 # Backend only
 cd server && npm run dev
 ```
 
+
 ---
 
-## Setup
 
-### 1. Install dependencies
+## Installing from Scratch
+
+
+If you received this project as a zip file or cloned it fresh, follow these steps:
+
+
+### 1. Install all dependencies
+
 
 ```bash
-# Root (concurrently)
+# Root (concurrently — runs both servers with one command)
 npm install
+
 
 # Frontend
 cd client && npm install
+
 
 # Backend
 cd server && npm install
 ```
 
+
 ### 2. Configure environment variables
+
 
 ```bash
 cp server/.env.example server/.env
 ```
 
-Then fill in the values in `server/.env`. See the [Environment Variables](#environment-variables) section below.
+
+Open `server/.env` and fill in:
+
+
+| Variable | Where to get it |
+|---|---|
+| `MONGO_URI` | MongoDB Atlas → Connect → Drivers → copy connection string |
+| `RESEND_API_KEY` | [resend.com](https://resend.com) → API Keys → Create API Key |
+| `EMAIL_FROM` | Use `Luxe Listings <onboarding@resend.dev>` for sandbox, or your verified domain in prod |
+| `EMAIL_TO` | Your email address — where contact form submissions are delivered |
+| `ICAL_AIRBNB_7BR_URL` | Airbnb listing → Availability → Export Calendar |
+| `ICAL_AIRBNB_6BR_URL` | Airbnb listing → Availability → Export Calendar |
+| `ICAL_VRBO_7BR_URL` | Vrbo → Calendar → Import/Export → Export |
+| `ICAL_VRBO_6BR_URL` | Vrbo → Calendar → Import/Export → Export |
+| `ICAL_BOOKING_7BR_URL` | Booking.com → Property → Calendar → Sync → Export iCal |
+| `ICAL_BOOKING_6BR_URL` | Booking.com → Property → Calendar → Sync → Export iCal |
+
 
 ### 3. Start the app
 
+
 ```bash
+# From the project root
 npm run dev
 ```
 
+
+### 4. Verify everything is working
+
+
+- Frontend: open `http://localhost:3000`
+- Backend health check: open `http://localhost:3001/api/health` — should return `{"status":"ok","db":"connected",...}`
+- Trigger a manual iCal sync: `curl -X POST http://localhost:3001/api/calendar/sync`
+
+
 ---
+
 
 ## Environment Variables
 
+
 All secrets live in `server/.env`. Never commit this file.
+
 
 | Variable | Description |
 |---|---|
@@ -72,11 +122,15 @@ All secrets live in `server/.env`. Never commit this file.
 | `CLIENT_ORIGIN` | Frontend URL for CORS (default: `http://localhost:3000`) |
 | `PORT` | Backend port (default: `3001`) |
 
+
 See `server/.env.example` for the full template.
+
 
 ---
 
+
 ## Project Structure
+
 
 ```
 listing/
@@ -97,9 +151,12 @@ listing/
 └── README.md
 ```
 
+
 ---
 
+
 ## Tech Stack
+
 
 | Layer | Technology |
 |---|---|
@@ -111,11 +168,15 @@ listing/
 | Email | Nodemailer (Gmail SMTP) → Resend planned for Phase 3 |
 | Dev tooling | concurrently, nodemon, ESLint |
 
+
 ---
+
 
 ## Changelog
 
+
 ### 2026-04-25 — Phase 3: Full Backend Integration
+
 
 - **Resend** replaces Nodemailer — transactional email via API key, better deliverability, no Gmail sending limits
 - **Mongoose models** — `Inquiry` and `Booking` schemas with validation, timestamps, status tracking, and IP logging
@@ -128,7 +189,9 @@ listing/
 - **Non-fatal email errors** — DB write always succeeds and returns 200 even if email fails; errors logged server-side
 - **Server modularized** — `src/models/`, `src/routes/`, `src/middleware/`, `src/lib/`
 
+
 ### 2026-04-25 — Phase 4: Calendar Integration
+
 
 - **6 iCal feeds synced** — Airbnb 7br + 6br, Vrbo 7br + 6br, Booking.com 7br + 6br
 - **`AvailabilityBlock` model** — stores blocked date ranges with source tracking and UID-based deduplication
@@ -141,6 +204,7 @@ listing/
 - **Booking card (home page)** — click check-in/check-out to open inline calendar with live availability; auto-closes on range selection; passes dates to `/booking` via URL params
 - **`excludeDisabled`** — range selection resets if user tries to span a blocked date
 
+
 - **CRA → Vite**: Replaced Create React App with Vite 6. Build time dropped from ~30s to <1s. Vulnerability count dropped from 28 to 0.
 - **Router wired up**: Connected `react-router-dom`. `/` → Home, `/inquire` → Inquire. Eliminated duplicate static HTML pages (`booking.html`, `inquire.html`) in favor of React routes.
 - **Server fixed**: Resolved broken `server.js` — added missing `body-parser` and `nodemailer` imports that were causing a crash on startup. Aligned server port to `3001`.
@@ -151,11 +215,21 @@ listing/
 - **Form UX**: Replaced `alert()` popups with inline success/error state messages.
 - **0 vulnerabilities**: All three package scopes (root, client, server) audited clean.
 
+
 ---
+
 
 ## Roadmap
 
-- **Phase 2** — UI modernization: Tailwind CSS + shadcn/ui, Airbnb-style layout, light theme with forest green accents, photo gallery modal, sticky booking card
-- **Phase 3** — Full backend: Mongoose models (Listing, Inquiry, Booking), Resend email integration, input validation, admin view
-- **Phase 4** — Calendar: iCal import from Airbnb/Vrbo, availability endpoint, outbound iCal export for direct booking sync
-- **Phase 5** — Polish: Mapbox map, Cloudinary image CDN, SEO/OG tags, analytics, Sentry error tracking
+
+- **Phase 2** — UI modernization: Tailwind CSS + shadcn/ui, Airbnb-style layout, light theme with forest green accents, photo gallery modal, sticky booking card ✅
+- **Phase 3** — Full backend: Mongoose models (Listing, Inquiry, Booking), Resend email integration, input validation, admin view ✅
+- **Phase 4** — Calendar: iCal import from Airbnb/Vrbo, availability endpoint, outbound iCal export for direct booking sync ✅
+- **Phase 5** — Polish & Deploy:
+ - Deployment — Vercel (frontend) + Railway (backend), custom domain DNS
+ - SEO — `LodgingBusiness` schema.org structured data, sitemap.xml
+ - Getting Around section redesign — bucket attractions into **Restaurants & Cafes**, **Nature & Excursions**, and **Logistics & Business**; add better visual indicators per category
+ - Analytics — Plausible or Umami (privacy-friendly, no cookie banner)
+ - Cloudinary image CDN — automatic WebP conversion and responsive sizing
+ - Sentry error tracking — frontend + server
+ - README changelog update
