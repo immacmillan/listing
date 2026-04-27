@@ -1,0 +1,9 @@
+# Exclude everything not needed for the server
+node_modules
+.env
+fly.toml
+*.md
+
+# Explicitly exclude client code if accidentally run from root
+../client
+../node_modules
