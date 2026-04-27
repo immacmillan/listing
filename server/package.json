@@ -1,29 +1,31 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node -r dotenv/config server.js dotenv_config_path=.env",
-    "dev": "nodemon -r dotenv/config server.js dotenv_config_path=.env"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "Express API for Luxe Listings",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "express-rate-limit": "^8.4.1",
-    "ical-generator": "^10.2.0",
-    "mongoose": "^8.8.2",
-    "node-cron": "^4.2.1",
-    "node-fetch": "^3.3.2",
-    "node-ical": "^0.26.0",
-    "resend": "^6.1.3",
-    "zod": "^4.3.6"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  }
+ "name": "server",
+ "version": "1.0.0",
+ "main": "server.js",
+ "scripts": {
+   "start": "node -r dotenv/config server.js dotenv_config_path=.env",
+   "dev": "nodemon -r dotenv/config server.js dotenv_config_path=.env"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "description": "Express API for Luxe Listings",
+ "dependencies": {
+   "cors": "^2.8.5",
+   "dotenv": "^16.4.5",
+   "express": "^4.21.1",
+   "express-rate-limit": "^8.4.1",
+   "helmet": "^8.1.0",
+   "ical-generator": "^10.2.0",
+   "mongoose": "^8.8.2",
+   "node-cron": "^4.2.1",
+   "node-fetch": "^3.3.2",
+   "node-ical": "^0.26.0",
+   "resend": "^6.1.3",
+   "sanitize-html": "^2.17.3",
+   "zod": "^4.3.6"
+ },
+ "devDependencies": {
+   "nodemon": "^3.1.7"
+ }
 }

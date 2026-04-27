@@ -226,10 +226,47 @@ listing/
 - **Phase 3** — Full backend: Mongoose models (Listing, Inquiry, Booking), Resend email integration, input validation, admin view ✅
 - **Phase 4** — Calendar: iCal import from Airbnb/Vrbo, availability endpoint, outbound iCal export for direct booking sync ✅
 - **Phase 5** — Polish & Deploy:
- - Deployment — Vercel (frontend) + Railway (backend), custom domain DNS
+ - Deployment — Vercel (frontend) + Fly.io (backend), custom domain DNS ✅
  - SEO — `LodgingBusiness` schema.org structured data, sitemap.xml
- - Getting Around section redesign — bucket attractions into **Restaurants & Cafes**, **Nature & Excursions**, and **Logistics & Business**; add better visual indicators per category
+ - Getting Around section redesign — bucket into Restaurants & Cafes, Nature & Excursions, and Logistics & Business; add better visual indicators ✅
  - Analytics — Plausible or Umami (privacy-friendly, no cookie banner)
  - Cloudinary image CDN — automatic WebP conversion and responsive sizing
  - Sentry error tracking — frontend + server
+ - Fly.io auto-deploy via GitHub Actions
  - README changelog update
+
+
+- **Phase 5 — Mobile & UI Backlog:**
+
+
+ 1. **Hero badges overlapping on mobile** — Strategy: wrap badges in a `flex-col` on mobile (`flex-col sm:flex-row`), or limit to 1-2 badges on small screens using `hidden sm:inline-flex` on the less critical ones. Keep location + one platform badge visible on mobile.
+
+
+ 2. **Platform trust badges not equal width** — Strategy: replace `inline-flex` with a fixed-width grid (`grid grid-cols-3`) or add `min-w-fit` and `justify-center` so all three pills stretch to the same width.
+
+
+ 3. **Flexible Pricing banner — "Inquire for rates" should link to #contact-us** — Strategy: wrap the text in an `<a href="#contact-us">` anchor with forest green underline styling. Simple one-line change in `PropertyDetails.jsx`.
+
+
+ 4. **Balcony icon is a beach umbrella** — Strategy: replace `fa-umbrella-beach` / current emoji with a more appropriate icon. Lucide has `DoorOpen` or use 🏠 emoji with a balcony context label. Alternatively use `🪟` (window) as the closest available emoji.
+
+
+ 5. **UV Cedar Sauna icon is a person** — Strategy: replace with `🧖` (person in steam room) is actually reasonable, but `♨️` (hot springs/steam) is more universally understood as sauna. Update in both `PropertyDetails.jsx` amenities list and `Guidebook.jsx`.
+
+
+ 6. **Guidebook link doesn't scroll to top** — Strategy: add `useEffect` in `Guidebook.jsx` that calls `window.scrollTo(0, 0)` on mount. React Router doesn't reset scroll position between route changes by default — a `ScrollToTop` component added to `App.jsx` fixes this globally for all pages.
+
+
+ 7. **Car rentals under Logistics & Business** — Strategy: add Hertz, Avis, Budget, Enterprise, National to the attractions list in both `Attractions.jsx` and `Guidebook.jsx` with 🚗 emoji and `~10 min drive` detail.
+
+
+ 8. **Peerspace / hourly booking for photoshoots & filming** — Strategy: add a dedicated section or callout on the home page (between the TikTok video and contact form) highlighting the property's availability for hourly creative bookings. Link to the Peerspace listing. Add a "Creative & Commercial Use" option to the inquiry type dropdown. Table for now.
+
+
+ 9. **Extended security hardening** — Current posture: Zod validation, rate limiting, CORS, HTTPS enforced. Gaps to address:
+    - **Helmet.js** — secure HTTP headers (XSS, clickjacking, content sniffing). One line: `app.use(helmet())`. High value, low effort.
+    - **DDoS protection** — handled automatically by Cloudflare once domain is routed through it (free tier). No code changes needed.
+    - **Input sanitization** — strip HTML/script tags from form fields before DB writes. Add `sanitize-html` on server, `DOMPurify` on client for any rendered user content.
+    - **Cloudflare Turnstile** — free CAPTCHA alternative for contact/booking forms. Prevents automated spam submissions without the UX friction of reCAPTCHA.
+    - **MongoDB operator injection** — add explicit `$` key stripping middleware as a defense-in-depth measure alongside Mongoose's built-in protections.
+    - **Sentry** — runtime error tracking and anomaly detection (already in backlog).

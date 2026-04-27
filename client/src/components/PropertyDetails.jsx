@@ -12,7 +12,7 @@ const ALL_AMENITIES = [
  { icon: '📺', label: 'Multimedia Center' },
  { icon: '🏓', label: 'Ping Pong' },
  { icon: '🔥', label: '2 Gas Fireplaces' },
- { icon: '🏖️', label: 'Balcony' },
+ { icon: '🏡', label: 'Balcony' },
  { icon: '🎮', label: 'Gaming Friendly' },
  { icon: '💻', label: 'Standing Desks' },
  { icon: '🛏️', label: 'Tempurpedic Mattresses' },
@@ -21,7 +21,7 @@ const ALL_AMENITIES = [
  { icon: '⛰️', label: 'Mountain View' },
  { icon: '⚽', label: 'Foosball Table' },
  { icon: '🏒', label: 'Air Hockey Table' },
- { icon: '🧖', label: 'UV Cedar Sauna' },
+ { icon: '♨️', label: 'UV Cedar Sauna' },
 ]
 
 
@@ -102,7 +102,12 @@ Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking
            </div>
            <div>
              <p className="text-sm font-semibold text-forest-900">Flexible Pricing Available</p>
-             <p className="text-sm text-forest-700">Daily · Weekly · Monthly · Events — inquire for rates</p>
+             <p className="text-sm text-forest-700">
+               Daily · Weekly · Monthly · Events —{' '}
+               <a href="#contact-us" className="font-semibold underline hover:text-forest-900 transition-colors">
+                 inquire for rates
+               </a>
+             </p>
            </div>
          </div>
 

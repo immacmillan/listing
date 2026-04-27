@@ -43,6 +43,7 @@ const categories = [
      { emoji: '🏨', label: 'Gaylord Convention Center', detail: '~8 min drive' },
      { emoji: '🏙️', label: 'Downtown Denver', detail: '~25 min drive' },
      { emoji: '🏬', label: 'Stanley Marketplace', detail: '~15 min drive' },
+     { emoji: '🚗', label: 'Hertz / Avis / Budget / Enterprise', detail: '~10 min drive' },
    ],
  },
 ]

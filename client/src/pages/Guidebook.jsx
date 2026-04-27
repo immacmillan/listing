@@ -219,6 +219,36 @@ const categories = [
        detail: '~15 min drive',
        description: "A converted 1950s airplane hangar now home to 50+ local shops, restaurants, breweries, and a climbing gym. One of Denver's most unique destinations. Don't miss Rosenberg's Bagels, Annette, Comida, and Infinite Monkey Theorem winery.",
      },
+     {
+       icon: '🚗',
+       label: 'Hertz Car Rental',
+       detail: '~10 min drive',
+       description: 'Convenient location near DIA corridor. Good availability of standard and premium vehicles.',
+     },
+     {
+       icon: '🚗',
+       label: 'Avis Car Rental',
+       detail: '~10 min drive',
+       description: 'Multiple locations near the airport and Aurora. Reliable option for longer rentals.',
+     },
+     {
+       icon: '🚗',
+       label: 'Budget Car Rental',
+       detail: '~10 min drive',
+       description: 'Affordable rates near DIA. Good for groups needing multiple vehicles.',
+     },
+     {
+       icon: '🚗',
+       label: 'Enterprise Car Rental',
+       detail: '~10 min drive',
+       description: 'One of the most accessible locations in the area. Offers pickup service from the property.',
+     },
+     {
+       icon: '🚗',
+       label: 'National Car Rental',
+       detail: '~10 min drive',
+       description: 'Premium option near DIA with a wide fleet selection. Emerald Club members can skip the counter.',
+     },
    ],
  },
 ]
