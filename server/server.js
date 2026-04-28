@@ -21,8 +21,17 @@ app.use(helmet())
 
 
 // ── Middleware ────────────────────────────────────────────────────────────────
+const allowedOrigins = (process.env.CLIENT_ORIGIN || 'http://localhost:3000')
+ .split(',')
+ .map((o) => o.trim())
+
+
 app.use(cors({
- origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000',
+ origin: (origin, callback) => {
+   if (!origin) return callback(null, true)
+   if (allowedOrigins.includes(origin)) return callback(null, true)
+   callback(new Error(`CORS: origin ${origin} not allowed`))
+ },
  optionsSuccessStatus: 200,
 }))
 app.use(express.json({ limit: '10kb' })) // limit body size
@@ -84,3 +93,4 @@ if (process.env.MONGO_URI) {
 // ── Start ─────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3001
 app.listen(PORT, '0.0.0.0', () => console.log(`✓ Server running on port ${PORT}`))
+
