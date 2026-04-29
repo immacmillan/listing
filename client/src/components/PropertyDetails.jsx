@@ -83,7 +83,7 @@ Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking
              { emoji: '🏅', platform: 'Vrbo', badge: 'Premier Host', sub: 'Top 1% · 10 / 10' },
              { emoji: '🌟', platform: 'Booking.com', badge: 'Exceptional', sub: '10 / 10 rating' },
            ].map((b) => (
-             <div key={b.badge} className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-gray-50">
+             <div key={b.badge} className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 flex-1 min-w-[160px]">
                <span className="text-2xl">{b.emoji}</span>
                <div>
                  <p className="text-xs text-gray-500 font-medium">{b.platform}</p>
