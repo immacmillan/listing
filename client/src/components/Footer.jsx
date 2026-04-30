@@ -15,6 +15,11 @@ export default function Footer() {
        </div>
        <div className="mt-6 pt-6 border-t border-gray-800 text-center text-xs">
          © 2026 Luxe Listings LLP — All rights reserved.
+         <div className="mt-2 text-gray-500">
+           <a href="tel:7204321203" className="hover:text-white transition-colors">📞 (720) 432-1203</a>
+           <span className="mx-2">·</span>
+           <a href="mailto:stay@5236malta.com" className="hover:text-white transition-colors">✉️ stay@5236malta.com</a>
+         </div>
        </div>
      </div>
    </footer>

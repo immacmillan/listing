@@ -72,6 +72,10 @@ export default function ContactForm() {
          <h2 className="text-2xl font-bold text-white mb-2">Get in touch</h2>
          <p className="text-forest-200 text-sm">
            Questions about availability, pricing, or events? We&apos;ll get back to you within 24 hours.
+           Or reach us directly at{' '}
+           <a href="mailto:stay@5236malta.com" className="text-white underline hover:text-forest-100">stay@5236malta.com</a>
+           {' '}or{' '}
+           <a href="tel:7204321203" className="text-white underline hover:text-forest-100">(720) 432-1203</a>.
          </p>
        </div>
 
