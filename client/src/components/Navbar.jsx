@@ -23,11 +23,11 @@ export default function Navbar() {
 
  const navLinks = [
    { label: 'Home', href: '/' },
-   { label: 'Gallery', href: '#gallery' },
-   { label: 'Amenities', href: '#amenities' },
-   { label: 'Listings', href: '#listings' },
+   { label: 'Gallery', href: '/#gallery' },
+   { label: 'Amenities', href: '/#amenities' },
+   { label: 'Listings', href: '/#listings' },
    { label: 'Guidebook', href: '/guidebook' },
-   { label: 'Contact', href: '#contact-us' },
+   { label: 'Contact', href: '/#contact-us' },
  ]
 
 
@@ -77,7 +77,7 @@ export default function Navbar() {
              )
            ))}
            <a
-             href="#contact-us"
+             href="/#contact-us"
              className="ml-2 px-4 py-2 rounded-lg bg-forest-800 text-white text-sm font-semibold hover:bg-forest-700 transition-colors"
            >
              Inquire Now
@@ -114,7 +114,7 @@ export default function Navbar() {
              </a>
            ))}
            <a
-             href="#contact-us"
+             href="/#contact-us"
              onClick={() => setMenuOpen(false)}
              className="mt-2 py-2 px-3 rounded-lg bg-forest-800 text-white text-sm font-semibold text-center hover:bg-forest-700 transition-colors"
            >
