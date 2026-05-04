@@ -54,17 +54,7 @@ export default function Navbar() {
          {/* Desktop nav */}
          <nav className="hidden md:flex items-center gap-6">
            {navLinks.map((link) => (
-             link.href.startsWith('#') ? (
-               <a
-                 key={link.label}
-                 href={link.href}
-                 className={`text-sm font-medium transition-colors hover:text-forest-500 ${
-                   useDark ? 'text-gray-700' : 'text-white/90'
-                 }`}
-               >
-                 {link.label}
-               </a>
-             ) : (
+             link.href === '/guidebook' ? (
                <Link
                  key={link.label}
                  to={link.href}
@@ -74,6 +64,16 @@ export default function Navbar() {
                >
                  {link.label}
                </Link>
+             ) : (
+               <a
+                 key={link.label}
+                 href={link.href}
+                 className={`text-sm font-medium transition-colors hover:text-forest-500 ${
+                   useDark ? 'text-gray-700' : 'text-white/90'
+                 }`}
+               >
+                 {link.label}
+               </a>
              )
            ))}
            <a
