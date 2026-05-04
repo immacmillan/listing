@@ -69,7 +69,7 @@ function PhotoCarousel({ photos }) {
 
 export default function OtherListings() {
  return (
-   <section id="listings" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-gray-200">
+   <section id="listings" className="scroll-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-gray-200">
      <h2 className="text-xl font-semibold text-gray-900 mb-2">Other configurations available</h2>
      <p className="text-gray-500 text-sm mb-8">Same property, flexible layout to fit your group size and budget.</p>
 

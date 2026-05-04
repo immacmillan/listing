@@ -129,7 +129,7 @@ Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking
 
 
          {/* Amenities */}
-         <div id="amenities" className="border-b border-gray-200 pb-6">
+         <div id="amenities" className="scroll-mt-20 border-b border-gray-200 pb-6">
            <h2 className="text-lg font-semibold text-gray-900 mb-4">What this place offers</h2>
            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
              {visibleAmenities.map((a) => (
