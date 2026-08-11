@@ -7,7 +7,7 @@ const inquirySchema = new mongoose.Schema(
     phone:   { type: String, trim: true, maxlength: 30, default: '' },
     reason:  {
       type: String,
-      enum: ['Short-term Rental', 'Mid-term Rental', 'Long-term Rental', 'Corporate/Private Event', 'Other', 'Inquiry'],
+      enum: ['Short-term Rental', 'Mid-term Rental', 'Long-term Rental', 'Corporate/Private Event', 'Film & Media Production', 'Other', 'Inquiry'],
       required: true,
     },
     message: { type: String, required: true, maxlength: 2500 },

@@ -3,6 +3,7 @@ import Hero from '../components/Hero.jsx'
 import Gallery from '../components/Gallery.jsx'
 import PropertyDetails from '../components/PropertyDetails.jsx'
 import OtherListings from '../components/OtherListings.jsx'
+import FilmMediaCallout from '../components/FilmMediaCallout.jsx'
 import Attractions from '../components/Attractions.jsx'
 import Testimonials from '../components/Testimonials.jsx'
 import VideoWalkthrough from '../components/VideoWalkthrough.jsx'
@@ -18,6 +19,7 @@ export default function Home() {
         <Gallery />
         <PropertyDetails />
         <OtherListings />
+        <FilmMediaCallout />
         <Attractions />
         <Testimonials />
         <VideoWalkthrough />

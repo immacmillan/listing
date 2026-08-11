@@ -12,7 +12,7 @@ const inquirySchema = z.object({
   email:   z.string().email('Invalid email address').max(320).trim().toLowerCase(),
   phone:   z.string().max(30).trim().optional().default(''),
   reason:  z.enum(
-    ['Short-term Rental', 'Mid-term Rental', 'Long-term Rental', 'Corporate/Private Event', 'Other', 'Inquiry'],
+    ['Short-term Rental', 'Mid-term Rental', 'Long-term Rental', 'Corporate/Private Event', 'Film & Media Production', 'Other', 'Inquiry'],
     { errorMap: () => ({ message: 'Please select a valid inquiry type' }) }
   ),
   message: z.string().min(1, 'Message is required').max(2500),
