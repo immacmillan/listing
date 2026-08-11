@@ -1,26 +1,21 @@
 name: Deploy
 
-
 on:
- push:
-   branches:
-     - main
-
+  push:
+    branches:
+      - main
 
 jobs:
- deploy-backend:
-   name: Deploy backend to Fly.io
-   runs-on: ubuntu-latest
-   steps:
-     - uses: actions/checkout@v4
+  deploy-backend:
+    name: Deploy backend to Fly.io
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
+      - uses: superfly/flyctl-actions/setup-flyctl@master
 
-     - uses: superfly/flyctl-actions/setup-flyctl@master
-
-
-     - name: Deploy to Fly.io
-       run: flyctl deploy --remote-only
-       working-directory: server
-       env:
-         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
+      - name: Deploy to Fly.io
+        run: flyctl deploy --remote-only
+        working-directory: server
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
