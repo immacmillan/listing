@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { MapPin, Users, Bath, Maximize2, ChevronDown, ChevronUp } from 'lucide-react'
+import { MapPin, Users, BedDouble, Bath, Maximize2, ChevronDown, ChevronUp } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/style.css'
 import axios from 'axios'
@@ -52,14 +52,22 @@ Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking
             </div>
 
             {/* Quick stats row */}
-            <div className="flex flex-wrap gap-4 mt-4">
+            <div className="flex flex-wrap items-center gap-4 mt-4">
               {[
-                { icon: <Users size={16} />, label: '7 bedrooms' },
+                { icon: <BedDouble size={16} />, label: '7 bedrooms' },
+                { icon: <Users size={16} />, label: 'Sleeps up to 18', highlight: true },
                 { icon: <Bath size={16} />, label: '4 full baths' },
                 { icon: <Maximize2 size={16} />, label: '6,000 sq ft' },
               ].map((s) => (
-                <div key={s.label} className="flex items-center gap-1.5 text-gray-700 text-sm font-medium">
-                  <span className="text-forest-700">{s.icon}</span>
+                <div
+                  key={s.label}
+                  className={
+                    s.highlight
+                      ? 'flex items-center gap-1.5 text-orange-800 text-sm font-semibold bg-orange-50 border border-orange-200 rounded-full px-3 py-1'
+                      : 'flex items-center gap-1.5 text-gray-700 text-sm font-medium'
+                  }
+                >
+                  <span className={s.highlight ? 'text-orange-600' : 'text-forest-700'}>{s.icon}</span>
                   {s.label}
                 </div>
               ))}

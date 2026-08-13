@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react'
+import { Star, Users, User, UserRound } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -56,12 +56,23 @@ export default function Hero() {
             <div className="hidden sm:flex flex-wrap gap-4 mb-6 sm:mb-8">
               {[
                 { value: '7', label: 'Bedrooms' },
+                { value: '18', label: 'Sleeps up to', icon: Users, highlight: true },
                 { value: '4', label: 'Full Baths' },
                 { value: '6,000', label: 'sq ft' },
               ].map((stat) => (
-                <div key={stat.label} className="bg-white/15 backdrop-blur-sm rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-center">
-                  <div className="text-white font-bold text-base sm:text-lg leading-none">{stat.value}</div>
-                  <div className="text-white/75 text-xs mt-0.5">{stat.label}</div>
+                <div
+                  key={stat.label}
+                  className={`backdrop-blur-sm rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-center ${
+                    stat.highlight
+                      ? 'bg-orange-600/85 ring-1 ring-orange-300/60'
+                      : 'bg-white/15'
+                  }`}
+                >
+                  <div className="text-white font-bold text-base sm:text-lg leading-none flex items-center justify-center gap-1">
+                    {stat.icon && <stat.icon size={15} className="text-orange-100" aria-hidden="true" />}
+                    {stat.value}
+                  </div>
+                  <div className={`text-xs mt-0.5 ${stat.highlight ? 'text-orange-100' : 'text-white/75'}`}>{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -83,20 +94,44 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — guest quote snippet, desktop only */}
+          {/* Right — guest quotes with attribution, tablet and up */}
           <a
             href="#testimonials"
-            className="hidden lg:block flex-shrink-0 max-w-xs group"
+            className="hidden md:block flex-shrink-0 max-w-sm group"
             aria-label="Read guest reviews"
           >
-            <div className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-4 transition-colors">
-              <p className="text-white text-sm font-medium leading-snug italic">
-                "This place was absolutely perfect for our group…"
-              </p>
-              <p className="text-white/80 text-sm font-medium leading-snug italic mt-2">
-                "This was the best Vrbo property our family has ever rented…"
-              </p>
-              <p className="text-white/50 text-xs mt-3 group-hover:text-white/80 transition-colors underline underline-offset-2">
+            <div className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-4 transition-colors space-y-4">
+              {[
+                {
+                  quote: 'This place was absolutely perfect for our group — very spacious, room for everyone, clean, comfy, and so many amenities.',
+                  name: 'Brady P.',
+                  context: 'Corporate AI Retreat',
+                  icon: User,
+                  iconColor: 'bg-blue-400/30 text-blue-100',
+                },
+                {
+                  quote: "This was the best Vrbo property our family has ever rented — we can't recommend this beautiful home enough.",
+                  name: 'Jen K.',
+                  context: 'Visiting with her family',
+                  icon: UserRound,
+                  iconColor: 'bg-pink-400/30 text-pink-100',
+                },
+              ].map((q) => (
+                <div key={q.name} className="flex items-start gap-3">
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 border border-white/25 ${q.iconColor}`}>
+                    <q.icon size={18} aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-white text-sm font-medium leading-snug italic">
+                      "{q.quote}"
+                    </p>
+                    <p className="text-white/70 text-xs mt-1.5 font-medium not-italic">
+                      {q.name} <span className="text-white/50">· {q.context}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+              <p className="text-white/50 text-xs group-hover:text-white/80 transition-colors underline underline-offset-2">
                 Read all guest reviews →
               </p>
             </div>
