@@ -336,3 +336,6 @@ All secrets live in `server/.env`. Never commit this file.
     - Different hero background image — use pond/backyard/golf course shot (will be provided)
     - Evaluate carousel layout for the video grid vs. current card grid
     - Build a separate commercial-specific inquiry form optimized for production (crew size, shoot date, equipment needs, release required, power requirements, etc.) instead of reusing the general contact form
+
+- **Backlog:**
+  - **Estate rentals parent site** — link to the parent site once URL and placement (footer / navbar / listings section) are decided
