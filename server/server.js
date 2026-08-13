@@ -8,6 +8,7 @@ require('dotenv').config()
 const inquiriesRouter = require('./src/routes/inquiries')
 const bookingsRouter  = require('./src/routes/bookings')
 const calendarRouter  = require('./src/routes/calendar')
+const eventsRouter    = require('./src/routes/events')
 const { sanitizeBody } = require('./src/middleware/sanitize')
 
 const app = express()
@@ -43,6 +44,7 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/inquiries', inquiriesRouter)
 app.use('/api/bookings',  bookingsRouter)
+app.use('/api/events',    eventsRouter)
 app.use('/api',           calendarRouter)
 
 // Keep legacy /api/send-email working during transition (forwards to inquiry)

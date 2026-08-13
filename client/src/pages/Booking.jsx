@@ -6,6 +6,7 @@ import 'react-day-picker/style.css'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
 import API_BASE from '../lib/api.js'
+import { trackEmailInput, flushEmailCapture } from '../lib/tracking.js'
 
 function isDateBlocked(date, blockedRanges) {
   return blockedRanges.some((range) => {
@@ -65,6 +66,7 @@ export default function Booking() {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }))
+    if (name === 'email') trackEmailInput('booking-page', { ...formData, email: value })
   }
 
   const handleSubmit = async (e) => {
@@ -140,7 +142,9 @@ export default function Booking() {
                       Email <span className="text-red-500">*</span>
                     </label>
                     <input id="email" name="email" type="email" placeholder="jane@example.com"
-                      value={formData.email} onChange={handleChange} className={inputCls('email')} />
+                      value={formData.email} onChange={handleChange}
+                      onBlur={() => flushEmailCapture('booking-page', formData)}
+                      className={inputCls('email')} />
                     {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
                   </div>
                 </div>

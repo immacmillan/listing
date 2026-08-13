@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
 import API_BASE from '../lib/api.js'
+import { trackEmailInput, flushEmailCapture } from '../lib/tracking.js'
 
 export default function Inquire() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ export default function Inquire() {
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     if (errors[e.target.name]) setErrors((prev) => ({ ...prev, [e.target.name]: undefined }))
+    if (e.target.name === 'email') trackEmailInput('inquire-page', { ...formData, email: e.target.value })
   }
 
   const handleSubmit = async (e) => {
@@ -92,7 +94,9 @@ export default function Inquire() {
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input id="email" name="email" type="email" placeholder="jane@example.com"
-                    value={formData.email} onChange={handleChange} className={inputClass('email')} />
+                    value={formData.email} onChange={handleChange}
+                    onBlur={() => flushEmailCapture('inquire-page', formData)}
+                    className={inputClass('email')} />
                   {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
                 </div>
 

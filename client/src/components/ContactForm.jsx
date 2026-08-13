@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import API_BASE from '../lib/api.js'
+import { trackEmailInput, flushEmailCapture } from '../lib/tracking.js'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -29,6 +30,8 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     // Clear error on change
     if (errors[e.target.name]) setErrors((prev) => ({ ...prev, [e.target.name]: undefined }))
+    // Capture typed email even if the form is never submitted
+    if (e.target.name === 'email') trackEmailInput('contact-form', { ...formData, email: e.target.value })
   }
 
   const handleSubmit = async (e) => {
@@ -107,6 +110,7 @@ export default function ContactForm() {
                   id="email" name="email" type="email"
                   placeholder="jane@example.com"
                   value={formData.email} onChange={handleChange}
+                  onBlur={() => flushEmailCapture('contact-form', formData)}
                   className={inputClass('email')}
                 />
                 {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}

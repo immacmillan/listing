@@ -4,6 +4,7 @@ import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/style.css'
 import axios from 'axios'
 import API_BASE from '../lib/api.js'
+import { useModuleEngagement } from '../lib/tracking.js'
 
 const ALL_AMENITIES = [
   { icon: '🛁', label: 'Jacuzzi Tub' },
@@ -175,6 +176,13 @@ function BookingCard() {
   const [blockedRanges, setBlockedRanges] = useState([])
   const cardRef = useRef(null)
 
+  // Notify host when a visitor plays with this widget for 5+ seconds
+  const engagement = useModuleEngagement('pricing-card', () => ({
+    checkIn:  range.from ? range.from.toISOString().split('T')[0] : '',
+    checkOut: range.to   ? range.to.toISOString().split('T')[0]   : '',
+    guests:   String(guests),
+  }))
+
   // Fetch availability on mount
   useEffect(() => {
     axios.get(`${API_BASE}/availability`)
@@ -210,7 +218,7 @@ function BookingCard() {
   }
 
   return (
-    <div ref={cardRef} className="sticky top-20 border border-gray-200 rounded-2xl shadow-lg p-6 bg-white">
+    <div ref={cardRef} {...engagement} className="sticky top-20 border border-gray-200 rounded-2xl shadow-lg p-6 bg-white">
       <div className="mb-4">
         <p className="text-lg font-semibold text-gray-900">Inquire for pricing</p>
         <p className="text-sm text-gray-500">Daily · Weekly · Monthly · Events</p>
