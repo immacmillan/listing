@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <p className="text-white font-semibold text-sm">Luxe Listings LLP</p>
-            <p className="text-xs mt-0.5">5236 Malta Street, Denver CO 80249</p>
+            <p className="text-xs mt-0.5">Green Valley Ranch, Denver CO 80249</p>
           </div>
           <div className="flex gap-6 text-xs">
             <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -104,10 +104,10 @@ export default function Booking() {
 
           {/* Property summary */}
           <div className="flex items-center gap-4 mb-6 p-4 bg-white rounded-xl border border-gray-200">
-            <img src="/assets/pic1.jpg" alt="Denver Dream House" className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+            <img src="/assets/pic1.jpg" alt="The Malta Residence" className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
             <div>
-              <p className="font-semibold text-gray-900 text-sm">Denver Dream House</p>
-              <p className="text-xs text-gray-500">5236 Malta Street, Denver CO 80249</p>
+              <p className="font-semibold text-gray-900 text-sm">The Malta Residence</p>
+              <p className="text-xs text-gray-500">Green Valley Ranch, Denver CO 80249</p>
               <p className="text-xs text-gray-500 mt-0.5">7 bed · 4 bath · 6,000 sq ft</p>
             </div>
           </div>

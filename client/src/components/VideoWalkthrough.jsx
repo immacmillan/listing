@@ -34,7 +34,7 @@ export default function VideoWalkthrough() {
             >
               @zane.rentals
             </a>
-            <p>Walking through 5236 Malta Street</p>
+            <p>Walking through The Malta Residence</p>
             <a
               target="_blank"
               rel="noreferrer"

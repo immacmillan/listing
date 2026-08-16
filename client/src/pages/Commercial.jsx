@@ -84,7 +84,7 @@ export default function Commercial() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Built for production.</h2>
             <p className="text-gray-600 leading-relaxed">
               From intimate closeups in the primary suite to wide interior shots of the open kitchen and great room,
-              5236 Malta has hosted commercial shoots, product videography, brand campaigns, and independent films.
+              The Malta Residence has hosted commercial shoots, product videography, brand campaigns, and independent films.
               The property offers privacy, flexibility, and enough distinct rooms to shoot an entire day without
               relocation.
             </p>

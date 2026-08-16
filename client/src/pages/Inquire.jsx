@@ -67,7 +67,7 @@ export default function Inquire() {
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8">
             <h1 className="text-xl font-bold text-gray-900 mb-1">Send an inquiry</h1>
-            <p className="text-sm text-gray-500 mb-6">5236 Malta Street, Denver CO — we&apos;ll respond within 24 hours.</p>
+            <p className="text-sm text-gray-500 mb-6">The Malta Residence — Green Valley Ranch, Denver CO. We&apos;ll respond within 24 hours.</p>
 
             {submitStatus === 'success' ? (
               <div className="text-center py-6">
