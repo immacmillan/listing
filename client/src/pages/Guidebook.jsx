@@ -24,6 +24,12 @@ const categories = [
         description: 'Flame-grilled chicken done right. Great for a quick, affordable meal for a large group. The pollo bowls and burritos are crowd favorites.',
       },
       {
+        icon: '🌯',
+        label: 'Chipotle',
+        detail: '~5 min drive',
+        description: 'Reliable, fast, and easy to feed a crowd. Order ahead in the app for group pickup — burrito bowls and the build-your-own taco setup work well for larger parties with different diets.',
+      },
+      {
         icon: '🍜',
         label: 'Pho 95 Noodle House',
         detail: '~8 min drive',
@@ -267,7 +273,7 @@ export default function Guidebook() {
             </Link>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Neighborhood Guidebook</h1>
             <p className="text-gray-500 max-w-2xl">
-              Everything you need to know about the area around 5236 Malta Street — from the coffee shop around the corner to world-class ski resorts and uniquely Colorado adventures.
+              Everything you need to know about the area around The Malta Residence — from the coffee shop around the corner to world-class ski resorts and uniquely Colorado adventures.
             </p>
           </div>
 

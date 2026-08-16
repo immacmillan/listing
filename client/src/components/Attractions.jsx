@@ -9,8 +9,8 @@ const categories = [
     items: [
       { emoji: '🍗', label: "Dave's Hot Chicken", detail: '~5 min drive' },
       { emoji: '🌮', label: 'El Pollo Loco', detail: '~5 min drive' },
+      { emoji: '🌯', label: 'Chipotle', detail: '~5 min drive' },
       { emoji: '🍜', label: 'Pho 95 Noodle House', detail: '~8 min drive' },
-      { emoji: '🍕', label: "Beau Jo's Colorado Pizza", detail: '~20 min drive' },
       { emoji: '🥩', label: 'Copper Table — Gaylord Rockies', detail: '~8 min drive' },
       { emoji: '🔥', label: 'Annette — Stanley Marketplace', detail: '~15 min drive' },
       { emoji: '☕', label: 'Dazbog Coffee', detail: '~5 min drive' },
