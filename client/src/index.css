@@ -72,9 +72,9 @@ body {
 
 /* ── Brand logo blink-in ─────────────────────────────────────────────────────
    Semi-futuristic boot-up: each character flickers on with a stepped
-   (digital) opacity pattern; the SVG emblem draws its peaks in, then the
-   accent dot pulses once. Pure CSS — degrades to static under
-   prefers-reduced-motion. */
+   (digital) opacity pattern; the SVG emblem draws its roofline in, the
+   chimney and lake stutter on, then the accent dot pulses once. Pure CSS —
+   degrades to static under prefers-reduced-motion. */
 
 .brand-char {
   display: inline-block;

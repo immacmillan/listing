@@ -5,8 +5,8 @@
  * semi-futuristic blink-in.
  *
  * Lettering: Dancing Script (Google Fonts) — calligraphy that holds up at
- * navbar size. The wordmark animates in whole-word segments, not characters,
- * so the script's ligatures and kerning stay intact.
+ * navbar size. Letters blink in individually and stack up left to right;
+ * words are kept in their own spans so spacing and sizing stay controlled.
  *
  * @param {boolean} dark  true when the navbar is in its solid/white state
  */
