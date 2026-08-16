@@ -4,7 +4,9 @@ import Home from './pages/Home.jsx'
 import Inquire from './pages/Inquire.jsx'
 import Booking from './pages/Booking.jsx'
 import Guidebook from './pages/Guidebook.jsx'
-import Commercial from './pages/Commercial.jsx'
+// Full commercial page (Commercial.jsx) is parked until the production
+// portfolio videos are real — /commercial routes to the splash for now.
+import CommercialComingSoon from './pages/CommercialComingSoon.jsx'
 
 /**
  * Handles scroll behavior on route change:
@@ -86,7 +88,7 @@ function App() {
         <Route path="/inquire" element={<Inquire />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/guidebook" element={<Guidebook />} />
-        <Route path="/commercial" element={<Commercial />} />
+        <Route path="/commercial" element={<CommercialComingSoon />} />
       </Routes>
     </BrowserRouter>
   )

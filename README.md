@@ -328,6 +328,7 @@ All secrets live in `server/.env`. Never commit this file.
   - **UptimeRobot** — free tier monitors `https://luxe-listing-api.fly.dev/api/health` and `https://5236malta.com` every 5 minutes, emails on downtime
   - **Admin dashboard** — view/manage inquiries and bookings without needing MongoDB Atlas UI
   - **Peerspace / hourly booking** — add callout section for photoshoots and filming, link to Peerspace listing, add "Creative & Commercial Use" inquiry type
+  - **Commercial page — restore full version:** `/commercial` currently routes to `CommercialComingSoon.jsx` (splash with contact info) because the video grid is all placeholders. The full page is built and parked in `Commercial.jsx` — swap the route in `App.jsx` once real video embeds exist, applying the improvements below.
   - **Commercial page improvements (next iteration):**
     - Remove 6,000 sqft spec — replace with indoor/outdoor spaces highlight
     - Add: storage for equipment, ample room for production equipment
@@ -339,3 +340,4 @@ All secrets live in `server/.env`. Never commit this file.
 
 - **Backlog:**
   - **Estate rentals parent site** — link to the parent site once URL and placement (footer / navbar / listings section) are decided
+  - **Guidebook dining refresh** — Beau Jo's was dropped from the homepage Attractions list (20 min drive) and now lives only on the full Guidebook page. Revisit the Guidebook restaurant lineup: confirm Beau Jo's placement, review drive times, and decide which spots deserve homepage billing vs. guidebook-only.
