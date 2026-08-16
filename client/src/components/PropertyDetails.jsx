@@ -30,8 +30,8 @@ export default function PropertyDetails() {
 
   const visibleAmenities = showAllAmenities ? ALL_AMENITIES : ALL_AMENITIES.slice(0, 8)
 
-  const shortDesc = `Welcome to the best kept secret in Green Valley Ranch — comfortable, spacious, and ample privacy at 5236 Malta, with lake views spanning kitchen and living room, and into the primary bedroom & balcony.`
-  const fullDesc = `Welcome to the best kept secret in Green Valley Ranch — comfortable, spacious, and ample privacy at 5236 Malta, with lake views spanning kitchen and living room, and into the primary bedroom & balcony. Available fully furnished, you can take in the Rocky Mountains from upstairs, or try out the UV Sauna & Spa-like downstairs bath. Something for everyone, with gaming, multimedia, cozy nooks, jacuzzi tub, and high-end finishes abundant. This gorgeous Denver home is well suited for families or groups (private or business) who appreciate refined amenities and well-appointed living.
+  const shortDesc = `Welcome to the best kept secret in Green Valley Ranch — comfortable, spacious, and ample privacy at The Malta Residence, with lake views spanning kitchen and living room, and into the primary bedroom & balcony.`
+  const fullDesc = `Welcome to the best kept secret in Green Valley Ranch — comfortable, spacious, and ample privacy at The Malta Residence, with lake views spanning kitchen and living room, and into the primary bedroom & balcony. Available fully furnished, you can take in the Rocky Mountains from upstairs, or try out the UV Sauna & Spa-like downstairs bath. Something for everyone, with gaming, multimedia, cozy nooks, jacuzzi tub, and high-end finishes abundant. This gorgeous Denver home is well suited for families or groups (private or business) who appreciate refined amenities and well-appointed living.
 
 Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking at the nearby Rocky Mountain Arsenal National Wildlife Refuge (3 mi), or Golfing at Green Valley Ranch Greens (on-site). Gaylord Convention Center is 1.5 mi away, and Denver International Airport (DIA) is just 4.3 mi — a 15 min drive.`
 
@@ -45,20 +45,20 @@ Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking
           {/* Title + location */}
           <div className="border-b border-gray-200 pb-6">
             <h1 className="text-2xl font-bold text-gray-900 mb-1">
-              Denver Dream House — Green Valley Ranch
+              The Malta Residence
             </h1>
             <div className="flex items-center gap-1.5 text-gray-500 text-sm">
               <MapPin size={14} />
-              <span>5236 Malta Street, Denver CO 80249</span>
+              <span>Green Valley Ranch, Denver CO 80249</span>
             </div>
 
             {/* Quick stats row */}
             <div className="flex flex-wrap items-center gap-4 mt-4">
               {[
                 { icon: <BedDouble size={16} />, label: '7 bedrooms' },
-                { icon: <Users size={16} />, label: 'Sleeps up to 18', highlight: true },
                 { icon: <Bath size={16} />, label: '4 full baths' },
                 { icon: <Maximize2 size={16} />, label: '6,000 sq ft' },
+                { icon: <Users size={16} />, label: 'Sleeps up to 18', highlight: true },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -78,16 +78,17 @@ Guests will enjoy activities in and around Denver — Skiing the Rockies, Hiking
           {/* Trust badges */}
           <div className="flex flex-wrap gap-3">
             {[
-              { emoji: '⭐', platform: 'Airbnb', badge: 'Guest Favorite', sub: 'Top 5% · 5.0 / 5.0' },
-              { emoji: '🏅', platform: 'Vrbo', badge: 'Premier Host', sub: 'Top 1% · 10 / 10' },
-              { emoji: '🌟', platform: 'Booking.com', badge: 'Exceptional', sub: '10 / 10 rating' },
+              { emoji: '⭐', platform: 'Airbnb', badge: 'Guest Favorite', rating: '5.0 Star Rating', meta: '36 reviews · Top 5%' },
+              { emoji: '🏅', platform: 'Vrbo', badge: 'Premier Host', rating: 'Rated 10/10 by 15+ groups', meta: 'Top 1%' },
+              { emoji: '🌟', platform: 'Booking.com', badge: 'Exceptional', rating: '10/10 Perfect Rating' },
             ].map((b) => (
-              <div key={b.badge} className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 w-[calc(50%-6px)] sm:flex-1 sm:w-auto sm:max-w-[220px]">
-                <span className="text-2xl">{b.emoji}</span>
+              <div key={b.badge} className="flex items-center gap-3.5 px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 w-[calc(50%-6px)] sm:flex-1 sm:w-auto sm:max-w-[250px]">
+                <span className="text-3xl leading-none">{b.emoji}</span>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">{b.platform}</p>
                   <p className="text-sm font-bold text-gray-900 leading-tight">{b.badge}</p>
-                  <p className="text-xs text-gray-500">{b.sub}</p>
+                  <p className="text-xs font-bold text-gray-800 mt-0.5">{b.rating}</p>
+                  {b.meta && <p className="text-xs text-gray-500">{b.meta}</p>}
                 </div>
               </div>
             ))}

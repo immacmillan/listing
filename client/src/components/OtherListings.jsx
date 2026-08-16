@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Users } from 'lucide-react'
 
 const configurations = [
   {
@@ -66,8 +66,8 @@ function PhotoCarousel({ photos }) {
 export default function OtherListings() {
   return (
     <section id="listings" className="scroll-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-gray-200">
-      <h2 className="text-xl font-semibold text-gray-900 mb-2">Other configurations available</h2>
-      <p className="text-gray-500 text-sm mb-8">Same property, flexible layout to fit your group size and budget.</p>
+      <h2 className="text-xl font-semibold text-gray-900 mb-2">Other overnight configurations available</h2>
+      <p className="text-gray-500 text-sm mb-8">Same private residence, flexible layout to fit your group size and budget.</p>
 
       {configurations.map((config) => (
         <div key={config.id} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -77,7 +77,13 @@ export default function OtherListings() {
           {/* Details — right */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900">{config.title}</h3>
-            <p className="text-sm text-gray-500 mt-0.5 mb-3">{config.subtitle}</p>
+            <div className="flex flex-wrap items-center gap-2.5 mt-0.5 mb-3">
+              <p className="text-sm text-gray-500">{config.subtitle}</p>
+              <span className="inline-flex items-center gap-1.5 text-orange-800 text-xs font-semibold bg-orange-50 border border-orange-200 rounded-full px-2.5 py-0.5">
+                <Users size={13} className="text-orange-600" aria-hidden="true" />
+                Max occupancy 8 · ideal for 4–6
+              </span>
+            </div>
             <p className="text-sm text-gray-600 leading-relaxed">{config.description}</p>
 
             {/* What's not included */}

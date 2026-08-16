@@ -8,7 +8,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-top"
         style={{ backgroundImage: "url('/assets/hero2.jpg')" }}
         role="img"
-        aria-label="Aerial view of 5236 Malta Street, Denver"
+        aria-label="Aerial view of The Malta Residence, Green Valley Ranch, Denver"
       />
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
@@ -56,9 +56,9 @@ export default function Hero() {
             <div className="hidden sm:flex flex-wrap gap-4 mb-6 sm:mb-8">
               {[
                 { value: '7', label: 'Bedrooms' },
-                { value: '18', label: 'Sleeps up to', icon: Users, highlight: true },
                 { value: '4', label: 'Full Baths' },
                 { value: '6,000', label: 'sq ft' },
+                { value: '18', label: 'Sleeps up to', icon: Users, highlight: true },
               ].map((stat) => (
                 <div
                   key={stat.label}
