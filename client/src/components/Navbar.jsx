@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import BrandLogo from './BrandLogo.jsx'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -43,7 +44,7 @@ export default function Navbar() {
             }`}
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Luxe Listings
+            <BrandLogo dark={useDark} />
           </Link>
 
           {/* Desktop nav */}

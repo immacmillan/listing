@@ -69,3 +69,84 @@ body {
 .rdp-root .rdp-range_middle {
   background-color: #d4f0e0;
 }
+
+/* ── Brand logo blink-in ─────────────────────────────────────────────────────
+   Semi-futuristic boot-up: each character flickers on with a stepped
+   (digital) opacity pattern; the SVG emblem draws its peaks in, then the
+   accent dot pulses once. Pure CSS — degrades to static under
+   prefers-reduced-motion. */
+
+.brand-char {
+  display: inline-block;
+  opacity: 0;
+  animation: brand-blink 0.5s steps(1, end) forwards;
+  will-change: opacity, filter;
+}
+
+@keyframes brand-blink {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; filter: brightness(2); }
+  30%  { opacity: 0.15; }
+  45%  { opacity: 0.9; filter: brightness(1.6); }
+  60%  { opacity: 0.3; }
+  100% { opacity: 1; filter: brightness(1); }
+}
+
+.brand-mark {
+  opacity: 0;
+  animation: brand-mark-in 0.45s steps(3, end) 0.1s forwards;
+}
+
+@keyframes brand-mark-in {
+  0%   { opacity: 0; }
+  40%  { opacity: 1; }
+  60%  { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+
+.brand-mark-path {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: brand-draw 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes brand-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.brand-mark-detail {
+  opacity: 0;
+  animation: brand-detail-in 0.35s steps(2, end) 0.75s forwards;
+}
+
+@keyframes brand-detail-in {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  70%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.brand-dot {
+  opacity: 0;
+  animation: brand-dot-pulse 0.9s ease-out 1.05s forwards;
+}
+
+@keyframes brand-dot-pulse {
+  0%   { opacity: 0; r: 1.8; }
+  35%  { opacity: 1; r: 3.2; }
+  100% { opacity: 1; r: 1.8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-char,
+  .brand-mark,
+  .brand-mark-detail,
+  .brand-dot {
+    animation: none;
+    opacity: 1;
+  }
+  .brand-mark-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
